@@ -103,11 +103,11 @@ export default function RevenueLineChart({ orders = [] }) {
           <AreaChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="revenueFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.35} />
-                <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.35} />
+                <stop offset="95%" stopColor="#f59e0b" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#3b82f6" opacity={0.12} vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#f59e0b" opacity={0.12} vertical={false} />
             <XAxis dataKey="label" stroke="#c3c7cd" fontSize={12} tickLine={false} axisLine={false} />
             <YAxis stroke="#c3c7cd" fontSize={12} tickLine={false} axisLine={false} width={56} tickFormatter={(value) => `$${value}`} />
             <Tooltip
@@ -115,7 +115,7 @@ export default function RevenueLineChart({ orders = [] }) {
               contentStyle={{ background: '#171a1e', border: '1px solid #292e35', borderRadius: 10, color: '#f2f2f3' }}
               labelStyle={{ color: '#9ba0aa' }}
             />
-            <Area type="monotone" dataKey="revenue" stroke="#3b82f6" strokeWidth={3} fill="url(#revenueFill)" dot={false} activeDot={{ r: 6 }} />
+            <Area type="monotone" dataKey="revenue" stroke="#f59e0b" strokeWidth={3} fill="url(#revenueFill)" dot={false} activeDot={{ r: 6 }} />
           </AreaChart>
         </ResponsiveContainer>
       </div> : <EmptyState title="No revenue in this period" message={orders.length ? 'Try a different date range to see other periods.' : 'Orders placed in this window will appear here.'} />}
